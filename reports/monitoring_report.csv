@@ -1,0 +1,11 @@
+feature,train_mean,new_mean,shift_in_std,missing_pct,status
+Age,45.94,45.15,-0.055,0.0,ok
+AnnualIncome,77499.943,75969.195,-0.034,0.91,ok
+EmploymentYears,14.036,14.914,0.093,0.0,ok
+LoanAmount,425433.253,430553.241,0.018,0.0,ok
+LoanTermMonths,50.393,51.327,0.051,0.0,ok
+InterestRatePct,13.523,13.402,-0.04,0.0,ok
+CreditScore,678.438,680.425,0.031,1.59,ok
+ExistingLoans,1.064,1.127,0.063,0.0,ok
+PastDelinquencies,0.453,0.432,-0.031,0.0,ok
+DebtToIncomeRatio,0.32,0.325,0.035,0.91,ok

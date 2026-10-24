@@ -1,0 +1,58 @@
+2026/10/24 07:39:31 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at /usr/local/lib/python3.13/site-packages/mlflow/assistant/skills/instrumenting-with-mlflow-tracing/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+2026/10/24 07:39:33 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/24 07:39:33 INFO mlflow.store.db.utils: Updating database tables
+2026/10/24 07:39:34 INFO mlflow.tracking.fluent: Experiment with name 'Loan_Default_Risk' does not exist. Creating a new experiment.
+Rows: 2200 | train: 1760 | test: 440
+Default rate  train: 0.205  test: 0.205
+
+=== Baseline runs ===
+2026/10/24 07:39:35 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+logistic_regression          CV PR-AUC=0.311  test PR-AUC=0.316  ROC-AUC=0.627  recall=0.533  precision=0.273
+2026/10/24 07:39:40 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+decision_tree                CV PR-AUC=0.259  test PR-AUC=0.228  ROC-AUC=0.546  recall=0.478  precision=0.238
+2026/10/24 07:39:47 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+random_forest                CV PR-AUC=0.276  test PR-AUC=0.316  ROC-AUC=0.588  recall=0.344  precision=0.267
+2026/10/24 07:39:53 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+gradient_boosting            CV PR-AUC=0.287  test PR-AUC=0.272  ROC-AUC=0.583  recall=0.011  precision=0.167
+
+=== Tuning Gradient Boosting (nested runs) ===
+2026/10/24 07:39:58 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+gb_tune_1                    CV PR-AUC=0.301  test PR-AUC=0.302  ROC-AUC=0.604  recall=0.000  precision=0.000
+2026/10/24 07:40:03 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+gb_tune_2                    CV PR-AUC=0.305  test PR-AUC=0.311  ROC-AUC=0.604  recall=0.000  precision=0.000
+2026/10/24 07:40:12 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+gb_tune_3                    CV PR-AUC=0.289  test PR-AUC=0.254  ROC-AUC=0.574  recall=0.000  precision=0.000
+2026/10/24 07:40:23 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+gb_tune_4                    CV PR-AUC=0.296  test PR-AUC=0.271  ROC-AUC=0.587  recall=0.000  precision=0.000
+2026/10/24 07:40:32 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+gb_tune_5                    CV PR-AUC=0.283  test PR-AUC=0.239  ROC-AUC=0.553  recall=0.022  precision=0.167
+2026/10/24 07:40:40 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+gb_tune_6                    CV PR-AUC=0.304  test PR-AUC=0.319  ROC-AUC=0.604  recall=0.000  precision=0.000
+
+=== All runs ranked by cv_pr_auc ===
+                   run               model     stage  cv_pr_auc  pr_auc  roc_auc  precision  recall      f1  accuracy
+0  logistic_regression  LogisticRegression  baseline     0.3108  0.3164   0.6267     0.2727  0.5333  0.3609    0.6136
+1            gb_tune_2    GradientBoosting    tuning     0.3052  0.3110   0.6044     0.0000  0.0000  0.0000    0.7932
+2            gb_tune_6    GradientBoosting    tuning     0.3036  0.3191   0.6043     0.0000  0.0000  0.0000    0.7932
+3            gb_tune_1    GradientBoosting    tuning     0.3013  0.3022   0.6038     0.0000  0.0000  0.0000    0.7932
+4            gb_tune_4    GradientBoosting    tuning     0.2965  0.2708   0.5865     0.0000  0.0000  0.0000    0.7886
+5            gb_tune_3    GradientBoosting    tuning     0.2893  0.2536   0.5743     0.0000  0.0000  0.0000    0.7864
+6    gradient_boosting    GradientBoosting  baseline     0.2867  0.2722   0.5827     0.1667  0.0111  0.0208    0.7864
+7            gb_tune_5    GradientBoosting    tuning     0.2835  0.2394   0.5528     0.1667  0.0222  0.0392    0.7773
+8        random_forest        RandomForest  baseline     0.2761  0.3162   0.5876     0.2672  0.3444  0.3010    0.6727
+9        decision_tree        DecisionTree  baseline     0.2592  0.2278   0.5457     0.2376  0.4778  0.3173    0.5795
+
+Best run: logistic_regression (efdadc07f3e544d3b3fbcd415160d8c3)
+Successfully registered model 'LoanDefaultRiskModel'.
+2026/10/24 07:40:44 WARNING mlflow.tracking._model_registry.fluent: Run with id efdadc07f3e544d3b3fbcd415160d8c3 has no artifacts at artifact path 'model', registering model based on models:/m-373b097d4f614b85905bcd9e35c32c53 instead
+Created version '1' of model 'LoanDefaultRiskModel'.
+Registered LoanDefaultRiskModel version 1 (alias: champion)
+
+=== Threshold comparison (selected model, test set) ===
+ threshold  precision  recall    f1  false_positives  false_negatives
+       0.2      0.203   0.956 0.335              338                4
+       0.3      0.213   0.889 0.344              295               10
+       0.4      0.245   0.744 0.368              207               23
+       0.5      0.273   0.533 0.361              128               42
+       0.6      0.356   0.344 0.350               56               59
+       0.7      0.344   0.122 0.180               21               79

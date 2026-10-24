@@ -1,0 +1,8 @@
+  mlflow.db
+  mlruns/
+  mlartifacts/
+  models/
+  venv/
+  __pycache__/
+  .pytest_cache/
+  .ipynb_checkpoints/
